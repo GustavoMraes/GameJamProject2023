@@ -35,7 +35,7 @@ public class playerController : MonoBehaviour
     public bool isMoving = false;
     public bool isGround;               // esta no chao
     private bool facingRight = true;   // olhando para direita/esquerda
-    private int facingDirection = -1;   // 1 direita / -1 esquerda
+    private int facingDirection = 1;   // 1 direita / -1 esquerda
     private bool recovering;            // Esta se recuperando de um ataque
     private bool canMove = true;        // Permite/bloqueia a movimentacao
 
