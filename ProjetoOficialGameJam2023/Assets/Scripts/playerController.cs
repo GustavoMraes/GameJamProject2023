@@ -26,10 +26,15 @@ public class playerController : MonoBehaviour
     public float attackRange;           // alcance do ataque
     public float attackCooldown;        // cooldown do ataque
     public LayerMask enemyLayers;       // Layers do inimigo
+    public Transform healthBar;         // Barra de vida verde
+    public GameObject healthBarObject;  // Objeto pai das barras
+
+    private Vector3 healthBarScale; // Tamanho da barra
+    private float healthPercent; // Percentual de vida para o calculo do tamanho da barra
 
     public bool isGround;               // esta no chao
-    private bool facingRight = false;    // olhando para direita/esquerda
-    private int facingDirection = -1;    // 1 direita / -1 esquerda
+    private bool facingRight = false;   // olhando para direita/esquerda
+    private int facingDirection = -1;   // 1 direita / -1 esquerda
     private bool recovering;            // Esta se recuperando de um ataque
     private bool canMove = true;        // Permite/bloqueia a movimentacao
 
@@ -38,9 +43,17 @@ public class playerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        healthBarScale = healthBar.localScale;
+        healthPercent = healthBarScale.x / health;
         playerAnim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    void UpdateHealthBar()
+    {
+        healthBarScale.x = healthPercent * health;
+        healthBar.localScale = healthBarScale;
     }
 
     // Update is called once per frame
@@ -79,8 +92,7 @@ public class playerController : MonoBehaviour
 
     private void Attack()
     {
-        anim.SetBool("Attack", true);
-
+        StartCoroutine("AttackAnim");
         Collider2D[] targets = Physics2D.OverlapCircleAll(attackHit.position, attackRange, enemyLayers);
 
         foreach (Collider2D target in targets)
@@ -92,6 +104,15 @@ public class playerController : MonoBehaviour
 
         
     }
+    IEnumerator AttackAnim()
+    {
+        anim.SetBool("Attack", true);
+
+        yield return new WaitForSeconds(.5f);
+
+        anim.SetBool("Attack", false);
+    }
+
 
     private void OnDrawGizmosSelected()
     {
@@ -164,6 +185,7 @@ public class playerController : MonoBehaviour
             Knockback();
             //vCam.GetComponent<CameraController>().CameraShake();
             health -= damage;
+            UpdateHealthBar();
 
             recovering = true;
 
