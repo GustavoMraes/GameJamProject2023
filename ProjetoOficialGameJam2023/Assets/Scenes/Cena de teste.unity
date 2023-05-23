@@ -6763,7 +6763,7 @@ MonoBehaviour:
   recoveryTime: 1
   attackDamage: 2
   attackHit: {fileID: 1605890812}
-  attackRange: 0.7
+  attackRange: 0.6
   attackCooldown: 0.1
   enemyLayers:
     serializedVersion: 2
@@ -6804,8 +6804,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.9375, y: 1.5625}
+  m_Offset: {x: 0, y: 0.032568753}
+  m_Size: {x: 0.9375, y: 1.4973625}
   m_Direction: 0
 --- !u!212 &1296449567
 SpriteRenderer:
@@ -6867,7 +6867,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296449562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.47, y: -0.69, z: 0}
+  m_LocalPosition: {x: -8.778, y: -0.806, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -31738,6 +31738,7 @@ GameObject:
   - component: {fileID: 2043215716}
   - component: {fileID: 2043215715}
   - component: {fileID: 2043215718}
+  - component: {fileID: 2043215719}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -31827,6 +31828,22 @@ MonoBehaviour:
   minX: 0
   maxX: 0
   timeLerp: 0
+--- !u!114 &2043215719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043215714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a3864e4bd427f04caf73f7a683a6bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1296449568}
+  minX: 0.1
+  maxX: 40
+  timeLerp: 0.05
 --- !u!1 &2120355532
 GameObject:
   m_ObjectHideFlags: 0
