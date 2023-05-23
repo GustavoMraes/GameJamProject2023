@@ -44,6 +44,7 @@ public class playerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         healthBarScale = healthBar.localScale;
         healthPercent = healthBarScale.x / health;
         playerAnim = GetComponent<Animator>();
@@ -60,7 +61,8 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canMove)
+        
+        if (canMove)
         {
             Controls();
             
