@@ -29,13 +29,13 @@ public class playerController : MonoBehaviour
     public Transform healthBar;         // Barra de vida verde
     public GameObject healthBarObject;  // Objeto pai das barras
 
-    private Vector3 healthBarScale; // Tamanho da barra
-    private float healthPercent; // Percentual de vida para o calculo do tamanho da barra
+    private Vector3 healthBarScale;     // Tamanho da barra
+    private float healthPercent;        // Percentual de vida para o calculo do tamanho da barra
 
     public bool isMoving = false;
     public bool isGround;               // esta no chao
-    private bool facingRight = true;   // olhando para direita/esquerda
-    private int facingDirection = 1;   // 1 direita / -1 esquerda
+    private bool facingRight = true;    // olhando para direita/esquerda
+    private int facingDirection = 1;    // 1 direita / -1 esquerda
     private bool recovering;            // Esta se recuperando de um ataque
     private bool canMove = true;        // Permite/bloqueia a movimentacao
 

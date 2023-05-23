@@ -6948,13 +6948,14 @@ MonoBehaviour:
   recoveryTime: 1
   attackDamage: 2
   attackHit: {fileID: 296193694}
-  attackRange: 0.7
+  attackRange: 0.8
   attackCooldown: 0.1
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
   healthBar: {fileID: 1733628246}
   healthBarObject: {fileID: 1695537270}
+  isMoving: 0
   isGround: 0
   anim: {fileID: 852981012}
 --- !u!50 &852981016
@@ -32398,7 +32399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 852981014}
-  minX: 0.1
+  minX: -5
   maxX: 40
   timeLerp: 0.05
 --- !u!1 &2120355532
