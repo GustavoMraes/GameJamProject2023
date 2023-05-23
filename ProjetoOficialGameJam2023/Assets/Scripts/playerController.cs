@@ -25,9 +25,27 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Move();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bloco") //verificar se o personagem esta no chao
+        {
+            isGround = true;
+            numeroPulos = 2; //resetar quantidade de pulos
+        }
+        else
+        {
+            isGround = false;
+        }
+    }
+
+    private void Move()
+    {
         if (Input.GetKeyDown(KeyCode.UpArrow) && numeroPulos > 0) //Pular
         {
-            rb.AddForce(transform.up * forca);  
+            rb.AddForce(transform.up * forca);
             numeroPulos -= 1;
         }
 
@@ -59,20 +77,6 @@ public class playerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftArrow)) //terminar animacao de andar pra esquerda
         {
             anim.SetBool("isMoving", false);
-        }
-
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Bloco") //verificar se o personagem esta no chao
-        {
-            isGround = true;
-            numeroPulos = 2; //resetar quantidade de pulos
-        }
-        else
-        {
-            isGround = false;
         }
     }
 
