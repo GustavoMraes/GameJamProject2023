@@ -45,7 +45,6 @@ public class Enemy : MonoBehaviour
     {
         healthBarScale = healthBar.localScale;
         healthPercent = healthBarScale.x / health;
-        //healthBarObject.SetActive(false);
     }
 
     void UpdateHealthBar()
@@ -87,6 +86,7 @@ public class Enemy : MonoBehaviour
     {
         facingLeft = !facingLeft;
         transform.Rotate(0f, 180f, 0f);
+
     }
 
     private void checkSurroundings() //verificar paredes e chao
@@ -137,9 +137,7 @@ public class Enemy : MonoBehaviour
     {
         if (!recovering)
         {
-            //healthBarObject.SetActive(true);
-
-            enemyAnim.SetTrigger("hurt");
+            //enemyAnim.SetTrigger("hurt");
 
             health -= damage;
 

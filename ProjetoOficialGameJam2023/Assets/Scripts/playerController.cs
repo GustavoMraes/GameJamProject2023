@@ -32,8 +32,9 @@ public class playerController : MonoBehaviour
     private Vector3 healthBarScale; // Tamanho da barra
     private float healthPercent; // Percentual de vida para o calculo do tamanho da barra
 
+    public bool isMoving = false;
     public bool isGround;               // esta no chao
-    private bool facingRight = false;   // olhando para direita/esquerda
+    private bool facingRight = true;   // olhando para direita/esquerda
     private int facingDirection = -1;   // 1 direita / -1 esquerda
     private bool recovering;            // Esta se recuperando de um ataque
     private bool canMove = true;        // Permite/bloqueia a movimentacao
@@ -120,6 +121,8 @@ public class playerController : MonoBehaviour
         Gizmos.DrawWireSphere(attackHit.position, attackRange);
     }
 
+
+
     private void Controls()
     {
         if (attackTimer <= 0) // se o ataque nao esta em cooldown
@@ -132,18 +135,19 @@ public class playerController : MonoBehaviour
         }
         else
         {
-            anim.SetBool("Attack", false);
             attackTimer -= Time.deltaTime;
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && numeroPulos > 0) //Pular
         {
+            
             rb.AddForce(transform.up * forca);
             numeroPulos -= 1;
         }
 
         if (Input.GetKey(KeyCode.RightArrow)) //andar pra direita
         {
+            
             transform.position += new Vector3(1 * speed * Time.deltaTime, 0, 0);
             if (!facingRight)
             {
@@ -153,6 +157,7 @@ public class playerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow)) //andar pra esquerda
         {
+
             transform.position -= new Vector3(1 * speed * Time.deltaTime, 0, 0);
             if(facingRight)
             {
@@ -160,14 +165,24 @@ public class playerController : MonoBehaviour
             }   
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow)) //comecar animacao de andar pra direita
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && !isMoving || Input.GetKeyDown(KeyCode.RightArrow) && !isMoving)
         {
-            anim.SetBool("isMoving", true);
+            Moving();
         }
-        if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow)) //terminar animacao de andar pra direita
+
+        if (Input.GetKeyUp(KeyCode.LeftArrow) && isMoving || Input.GetKeyUp(KeyCode.RightArrow) && isMoving)
         {
-            anim.SetBool("isMoving", false);
+            Moving();
         }
+
+
+    }
+
+    void Moving()
+    {
+        isMoving = !isMoving;
+        anim.SetBool("isMoving", isMoving);
+
     }
 
     void Flip()

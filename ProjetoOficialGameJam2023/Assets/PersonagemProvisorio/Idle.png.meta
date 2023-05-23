@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 47d12acdda81541489accfa04e5d34cc
+guid: 162f8e05ffbd518478a62fd792e1036d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,33 +105,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player Teste_0
+      name: Idle_0
       rect:
         serializedVersion: 2
         x: 10
-        y: 8
-        width: 30
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b30da45de9df08441a882f89f46eb4d1
-      internalID: 445864339
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Teste_1
-      rect:
-        serializedVersion: 2
-        x: 57
-        y: 8
-        width: 31
+        y: 0
+        width: 25
         height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -140,82 +119,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24ef0d2fd3d30af4bbd58b46cbe7eb6c
-      internalID: -1229753412
+      spriteID: 7f32cb4b37fc80b458e5ef73f6ed54bb
+      internalID: -1611108842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Teste_2
+      name: Idle_1
       rect:
         serializedVersion: 2
-        x: 105
-        y: 8
-        width: 31
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a007773e9fad3f4387805a401a1d0c5
-      internalID: 1846555818
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Teste_3
-      rect:
-        serializedVersion: 2
-        x: 154
-        y: 8
-        width: 30
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0fd80b5e7e2c0df4dab53daa8224e786
-      internalID: -356667354
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Teste_4
-      rect:
-        serializedVersion: 2
-        x: 202
-        y: 8
-        width: 30
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a485a17716831e4ea96e7690f0bb8a6
-      internalID: -1785434784
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Teste_5
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 8
-        width: 30
+        x: 58
+        y: 0
+        width: 25
         height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -224,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c3116738cb79974aa4a50ec0c719d6b
-      internalID: -95164521
+      spriteID: 1e84f6a273b42ca498a9d73ee7c42af6
+      internalID: 2137866017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Teste_6
+      name: Idle_2
       rect:
         serializedVersion: 2
-        x: 298
-        y: 8
-        width: 30
-        height: 50
+        x: 106
+        y: 0
+        width: 25
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,29 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e4e9abb43abf2f4fbf64f75f8702881
-      internalID: 867785027
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Teste_7
-      rect:
-        serializedVersion: 2
-        x: 346
-        y: 8
-        width: 30
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e47fa1d8a77c3bc40a85ff669d4dccfc
-      internalID: 1196187733
+      spriteID: 4a33fdc49f39f62449705450f2b5c706
+      internalID: -573483882
       vertices: []
       indices: 
       edges: []
@@ -283,14 +178,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player Teste_0: 445864339
-      Player Teste_1: -1229753412
-      Player Teste_2: 1846555818
-      Player Teste_3: -356667354
-      Player Teste_4: -1785434784
-      Player Teste_5: -95164521
-      Player Teste_6: 867785027
-      Player Teste_7: 1196187733
+      Idle_0: -1611108842
+      Idle_1: 2137866017
+      Idle_2: -573483882
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

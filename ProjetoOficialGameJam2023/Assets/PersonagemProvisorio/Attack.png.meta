@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 275a3ab42c2780642af9dd81b62f7b96
+guid: 1ac31b6359751604c8d0c814d8ca53af
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,76 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player Teste - attack_0
+      name: Attack_0
       rect:
         serializedVersion: 2
-        x: 11
+        x: 2
+        y: 0
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d28ead2d60dc5e14b9068ec52d566ff4
+      internalID: 386088298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dcafb08202f6cf4aa7128c487762b5c
+      internalID: -929232084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c79f29c6f0217645826e871529f0230
+      internalID: -847653542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3
+      rect:
+        serializedVersion: 2
+        x: 148
         y: 0
         width: 37
-        height: 50
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c5528ca43222504e9a6cd974d68af96
-      internalID: 1364045372
+      spriteID: 27da753263ce80240ad7d199c82cc473
+      internalID: -826160144
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Teste - attack_1
+      name: Attack_4
       rect:
         serializedVersion: 2
-        x: 60
+        x: 196
         y: 0
-        width: 36
-        height: 48
+        width: 44
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,41 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 864a8db4655d41f4da4d30d0a021b887
-      internalID: 2050721445
+      spriteID: 7b930133ee8f9724a93bd51a7f4256e6
+      internalID: 1223678920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Teste - attack_2
+      name: Attack_5
       rect:
         serializedVersion: 2
-        x: 113
-        y: 0
-        width: 31
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e97dba8e4106f54fa4a13354362adad
-      internalID: -654877210
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Teste - attack_3
-      rect:
-        serializedVersion: 2
-        x: 153
+        x: 244
         y: 0
         width: 39
-        height: 50
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,29 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15c61b5a3058c8c4f9f3d68a7f304d0d
-      internalID: -112439118
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Teste - attack_4
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 0
-        width: 45
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92c9dead59d09ed45b4becd5e092d8b8
-      internalID: 2003010495
+      spriteID: 277e6ccfa1a89bf4891ba5760e6b63c7
+      internalID: -1133108088
       vertices: []
       indices: 
       edges: []
@@ -220,11 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player Teste - attack_0: 1364045372
-      Player Teste - attack_1: 2050721445
-      Player Teste - attack_2: -654877210
-      Player Teste - attack_3: -112439118
-      Player Teste - attack_4: 2003010495
+      Attack_0: 386088298
+      Attack_1: -929232084
+      Attack_2: -847653542
+      Attack_3: -826160144
+      Attack_4: 1223678920
+      Attack_5: -1133108088
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
