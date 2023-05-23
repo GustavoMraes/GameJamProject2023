@@ -35,8 +35,10 @@ public class Enemy : MonoBehaviour
     public GameObject healthBarObject; //Objeto pai das barras
     public float recoveryTime;
 
+    [Header("Barra de vida")]
     private Vector3 healthBarScale; // Tamanho da barra
     private float healthPercent; // Percentual de vida para o calculo do tamanho da barra
+    private float pivot; //Ordem pela qual a barra vai diminuir
 
 
     private int direction = 1; // 1 - direita / -1 esquerda
@@ -45,6 +47,7 @@ public class Enemy : MonoBehaviour
     {
         healthBarScale = healthBar.localScale;
         healthPercent = healthBarScale.x / health;
+        //healthBarObject.SetActive(false);
     }
 
     void UpdateHealthBar()
@@ -86,7 +89,6 @@ public class Enemy : MonoBehaviour
     {
         facingLeft = !facingLeft;
         transform.Rotate(0f, 180f, 0f);
-
     }
 
     private void checkSurroundings() //verificar paredes e chao
@@ -137,6 +139,8 @@ public class Enemy : MonoBehaviour
     {
         if (!recovering)
         {
+            //healthBarObject.SetActive(true);
+
             //enemyAnim.SetTrigger("hurt");
 
             health -= damage;
