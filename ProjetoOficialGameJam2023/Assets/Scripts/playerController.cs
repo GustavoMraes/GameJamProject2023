@@ -40,6 +40,7 @@ public class playerController : MonoBehaviour
     private bool canMove = true;        // Permite/bloqueia a movimentacao
 
     public Animator anim;
+    private Menu menu;
     
     // Start is called before the first frame update
     void Start()
@@ -65,11 +66,10 @@ public class playerController : MonoBehaviour
         if (canMove)
         {
             Controls();
-            
         }
-        
 
-        if(recovering) // cooldown de recuperacao
+
+        if (recovering) // cooldown de recuperacao
         {
             recoveryCounter += Time.deltaTime;
             if(recoveryCounter >= recoveryTime)
