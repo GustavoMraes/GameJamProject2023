@@ -39,6 +39,8 @@ public class playerController : MonoBehaviour
     private bool recovering;            // Esta se recuperando de um ataque
     private bool canMove = true;        // Permite/bloqueia a movimentacao
 
+   
+
     public Animator anim;
     private Menu menu;
     
@@ -150,7 +152,7 @@ public class playerController : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow)) //andar pra direita
         {
             
-            transform.position += new Vector3(1 * speed * Time.deltaTime, 0, 0);
+            transform.position += new Vector3(1 * speed * Time.deltaTime, 0, 0);            
             if (!facingRight)
             {
                 Flip();
@@ -161,7 +163,7 @@ public class playerController : MonoBehaviour
         {
 
             transform.position -= new Vector3(1 * speed * Time.deltaTime, 0, 0);
-            if(facingRight)
+           if (facingRight)
             {
                 Flip();
             }   
@@ -170,7 +172,11 @@ public class playerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow) && !isMoving || Input.GetKeyDown(KeyCode.RightArrow) && !isMoving)
         {
             Moving();
+
+          
+
         }
+        
 
         if (Input.GetKeyUp(KeyCode.LeftArrow) && isMoving || Input.GetKeyUp(KeyCode.RightArrow) && isMoving)
         {
@@ -236,6 +242,22 @@ public class playerController : MonoBehaviour
         // Devolve o controle do personagem
         canMove = true;
     }
+
+    public bool GetEstaAndadoEsquerda()
+    {
+        return isMoving && !facingRight;
+    }
+
+    public bool GetEstaAndadoDireita()
+    {
+        return isMoving && facingRight;
+    }
+
+    public bool GetIsMoving()
+    {
+        return isMoving;
+    }
+
 
 
 }
