@@ -14,7 +14,8 @@ public class InteractObject : MonoBehaviour
     private UnityEvent botaoApertado;
 
     private bool canExecute;
-    public string cena;
+    public string cena1;
+
     // Update is called once per frame
     void Update()
     {
@@ -39,6 +40,6 @@ public class InteractObject : MonoBehaviour
 
     public void NextScene()
     {
-        SceneManager.LoadScene(cena);
+        SceneManager.LoadScene(cena1);
     }
 }

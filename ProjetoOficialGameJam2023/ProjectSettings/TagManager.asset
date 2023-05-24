@@ -6,6 +6,10 @@ TagManager:
   tags:
   - ground
   - Inimigo
+  - Fase1
+  - Fase2
+  - Fase3
+  - Fase4
   layers:
   - Default
   - TransparentFX
