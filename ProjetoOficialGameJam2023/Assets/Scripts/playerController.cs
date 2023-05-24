@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class playerController : MonoBehaviour
 {
@@ -32,6 +34,7 @@ public class playerController : MonoBehaviour
     private Vector3 healthBarScale;     // Tamanho da barra
     private float healthPercent;        // Percentual de vida para o calculo do tamanho da barra
 
+    [Header("Extras")]
     public bool isMoving = false;
     public bool isGround;               // esta no chao
     private bool facingRight = true;    // olhando para direita/esquerda
@@ -43,7 +46,10 @@ public class playerController : MonoBehaviour
 
     public Animator anim;
     private Menu menu;
-    
+    private bool isDead = false;
+    public GameObject gameOverPanel;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,8 +70,8 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (canMove)
+
+        if (canMove && !isDead)
         {
             Controls();
         }
@@ -190,7 +196,6 @@ public class playerController : MonoBehaviour
     {
         isMoving = !isMoving;
         anim.SetBool("isMoving", isMoving);
-
     }
 
     void Flip()
@@ -222,7 +227,24 @@ public class playerController : MonoBehaviour
     void Die()
     {
         // Tocar animacao
+        isDead = true;
         anim.SetBool("isDead", true);
+        StartCoroutine(Dead());
+        
+    }
+
+    public void GameOver()
+    {
+        gameOverPanel.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    IEnumerator Dead() 
+    {
+        GameOver();
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Menu");
     }
 
     void Knockback()
