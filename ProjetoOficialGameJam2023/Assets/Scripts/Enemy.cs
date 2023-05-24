@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     private RaycastHit2D leftWall;          //verificador da parede esquerda
     private RaycastHit2D rigthEdge;         //verificador da borda do chao direito
     private RaycastHit2D leftEdge;          //verificador da borda do chao esquerdo
+    private RaycastHit2D rightEnemy;        //Verificador de inimigo a direita
+    private RaycastHit2D leftEnemy;         //verificador de inimigo a esquerda
 
     public bool facingLeft = false;         // verificador da posicao do sprite
     private bool canMove = true;            //Verificar se pode se mover
@@ -23,6 +25,7 @@ public class Enemy : MonoBehaviour
     public Vector2 offset;
     public LayerMask wallLayer;
     public LayerMask groundLayer;
+    public LayerMask enemyLayer;
 
     [Header("Componentes")]
     public Rigidbody2D enemyRb;             // enemy rigidbody
@@ -120,6 +123,20 @@ public class Enemy : MonoBehaviour
         else
         {
             moveSpeed = 2;
+        }
+
+        rightEnemy = Physics2D.Raycast(new Vector2(transform.position.x + offset.x, transform.position.y + offset.y), Vector2.right, 1f, enemyLayer);
+        Debug.DrawRay(new Vector2(transform.position.x + offset.x, transform.position.y + offset.y), Vector2.right, Color.blue);
+        if (rightEnemy.collider != null)
+        {
+            direction = -1;
+        }
+
+        leftEnemy = Physics2D.Raycast(new Vector2(transform.position.x - offset.x, transform.position.y + offset.y), Vector2.left, 1f, enemyLayer);
+        Debug.DrawRay(new Vector2(transform.position.x - offset.x, transform.position.y + offset.y), Vector2.left, Color.blue);
+        if (leftEnemy.collider != null)
+        {
+            direction = 1;
         }
 
         rightWall = Physics2D.Raycast(new Vector2(transform.position.x + offset.x, transform.position.y + offset.y), Vector2.right, 1f, wallLayer);
