@@ -7045,7 +7045,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852981011}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.564, y: -0.751, z: 0}
+  m_LocalPosition: {x: -8.66, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7400,7 +7400,7 @@ MonoBehaviour:
   enemyAnim: {fileID: 0}
   moveSpeed: 2
   rangeDetect: 4
-  followMode: 0
+  followMode: 1
   player: {fileID: 852981015}
   health: 10
   healthBar: {fileID: 462580889}
