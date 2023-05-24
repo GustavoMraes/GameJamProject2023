@@ -127,28 +127,60 @@ public class Enemy : MonoBehaviour
 
         rightEnemy = Physics2D.Raycast(new Vector2(transform.position.x + offset.x, transform.position.y + offset.y), Vector2.right, 1f, enemyLayer);
         Debug.DrawRay(new Vector2(transform.position.x + offset.x, transform.position.y + offset.y), Vector2.right, Color.blue);
-        if (rightEnemy.collider != null)
+        if (rightEnemy.collider != null && !followPlayer)
+        {
+            direction = -1;
+        }
+        if (rightEnemy.collider == null && followPlayer)
+        {
+            direction = 0;
+        }
+        if (rightEnemy.collider == null && playerDistance < 0)
         {
             direction = -1;
         }
 
         leftEnemy = Physics2D.Raycast(new Vector2(transform.position.x - offset.x, transform.position.y + offset.y), Vector2.left, 1f, enemyLayer);
         Debug.DrawRay(new Vector2(transform.position.x - offset.x, transform.position.y + offset.y), Vector2.left, Color.blue);
-        if (leftEnemy.collider != null)
+        if (leftEnemy.collider != null && !followPlayer)
+        {
+            direction = 1;
+        }
+        if (leftEnemy.collider == null && followPlayer)
+        {
+            direction = 0;
+        }
+        if (leftEnemy.collider == null && playerDistance > 0)
         {
             direction = 1;
         }
 
         rightWall = Physics2D.Raycast(new Vector2(transform.position.x + offset.x, transform.position.y + offset.y), Vector2.right, 1f, wallLayer);
         Debug.DrawRay(new Vector2(transform.position.x + offset.x, transform.position.y + offset.y), Vector2.right, Color.yellow);
-        if (rightWall.collider != null)
+        if (rightWall.collider != null && !followPlayer)
+        {
+            direction = -1;
+        }
+        if (rightWall.collider == null && followPlayer)
+        {
+            direction = 0;
+        }
+        if (rightWall.collider == null && playerDistance < 0)
         {
             direction = -1;
         }
 
         leftWall = Physics2D.Raycast(new Vector2(transform.position.x - offset.x, transform.position.y + offset.y), Vector2.left, 1f, wallLayer);
         Debug.DrawRay(new Vector2(transform.position.x - offset.x, transform.position.y + offset.y), Vector2.left, Color.yellow);
-        if (leftWall.collider != null)
+        if (leftWall.collider != null && !followPlayer)
+        {
+            direction = 1;
+        }
+        if (leftWall.collider == null && followPlayer)
+        {
+            direction = 0;
+        }
+        if (leftWall.collider == null && playerDistance > 0)
         {
             direction = 1;
         }
