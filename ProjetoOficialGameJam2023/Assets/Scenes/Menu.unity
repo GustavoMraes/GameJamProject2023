@@ -261,7 +261,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -3
-  m_Sprite: {fileID: 21300000, guid: b009b64f2d395ea4289d2484724f24b4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 347fc9ebc6457fa44a5440594a15afc9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -780,8 +780,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -83.4, y: -50.1}
-  m_SizeDelta: {x: 292.63, y: 42.04}
+  m_AnchoredPosition: {x: -77.02, y: -75.6}
+  m_SizeDelta: {x: 186.38, y: 42.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &893940802
 MonoBehaviour:
@@ -805,7 +805,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
+    m_HighlightedColor: {r: 0.5686275, g: 0.098039225, b: 0.043137256, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -996,7 +996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.8, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1037525519
@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: START GAME
+  m_text: START
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eecce779f1de3cf439efd569ff8a2e7b, type: 2}
   m_sharedMaterial: {fileID: -9171981587089265322, guid: eecce779f1de3cf439efd569ff8a2e7b, type: 2}
@@ -1028,8 +1028,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278787243
-  m_fontColor: {r: 0.67058825, g: 0.10980392, b: 0.03529412, a: 1}
+    rgba: 4292664284
+  m_fontColor: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1082,7 +1082,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -46.62034, y: 0, z: -52.91784, w: 0}
+  m_margin: {x: -0.4800415, y: 0, z: -1.1694183, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1580,7 +1580,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUIT GAME
+  m_text: QUIT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eecce779f1de3cf439efd569ff8a2e7b, type: 2}
   m_sharedMaterial: {fileID: -9171981587089265322, guid: eecce779f1de3cf439efd569ff8a2e7b, type: 2}
@@ -1589,8 +1589,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278787243
-  m_fontColor: {r: 0.67058825, g: 0.10980392, b: 0.03529412, a: 1}
+    rgba: 4292664284
+  m_fontColor: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1643,7 +1643,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -46.32776, y: 0, z: -45.665924, w: 0}
+  m_margin: {x: -0.79455566, y: 0, z: -0.13272859, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1822,8 +1822,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -82.8, y: 53}
-  m_SizeDelta: {x: 306.58, y: 42.04}
+  m_AnchoredPosition: {x: -78.56, y: 28.2}
+  m_SizeDelta: {x: 201.24, y: 42.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1836069283
 MonoBehaviour:
@@ -1847,7 +1847,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 0}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.5254902, g: 0.003921569, b: 0.1137255, a: 1}
     m_PressedColor: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
     m_SelectedColor: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
     m_DisabledColor: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 0.5019608}
