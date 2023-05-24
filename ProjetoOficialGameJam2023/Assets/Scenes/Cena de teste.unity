@@ -7213,7 +7213,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -7242,6 +7242,9 @@ MonoBehaviour:
   enemyRb: {fileID: 1283642484}
   enemyAnim: {fileID: 0}
   moveSpeed: 2
+  rangeDetect: 4.5
+  followMode: 1
+  player: {fileID: 852981015}
   health: 10
   healthBar: {fileID: 462580889}
   healthBarObject: {fileID: 1959306904}

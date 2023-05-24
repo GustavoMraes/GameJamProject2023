@@ -68,6 +68,7 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (canMove && !isDead)
         {
             Controls();
