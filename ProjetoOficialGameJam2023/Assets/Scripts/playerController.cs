@@ -5,7 +5,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(CapsuleCollider2D))]
 public class playerController : MonoBehaviour
 {
     [SerializeField] float speed;       // velocidade de movimento
@@ -42,9 +43,8 @@ public class playerController : MonoBehaviour
     private bool recovering;            // Esta se recuperando de um ataque
     private bool canMove = true;        // Permite/bloqueia a movimentacao
 
-   
+    private float direcao = 1;
 
-    public Animator anim;
     private Menu menu;
     private bool isDead = false;
     public GameObject gameOverPanel;
@@ -86,6 +86,7 @@ public class playerController : MonoBehaviour
                 recovering = false;
             }
         }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -117,11 +118,11 @@ public class playerController : MonoBehaviour
     }
     IEnumerator AttackAnim()
     {
-        anim.SetBool("Attack", true);
+        playerAnim.SetBool("Attack", true);
 
         yield return new WaitForSeconds(.5f);
 
-        anim.SetBool("Attack", false);
+        playerAnim.SetBool("Attack", false);
     }
 
 
@@ -130,8 +131,6 @@ public class playerController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackHit.position, attackRange);
     }
-
-
 
     private void Controls()
     {
@@ -150,52 +149,58 @@ public class playerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && numeroPulos > 0) //Pular
         {
-            
             rb.AddForce(transform.up * forca);
             numeroPulos -= 1;
         }
 
         if (Input.GetKey(KeyCode.RightArrow)) //andar pra direita
         {
-            
             transform.position += new Vector3(1 * speed * Time.deltaTime, 0, 0);            
             if (!facingRight)
             {
                 Flip();
             }
+            
         }
 
         if (Input.GetKey(KeyCode.LeftArrow)) //andar pra esquerda
         {
-
-            transform.position -= new Vector3(1 * speed * Time.deltaTime, 0, 0);
+           transform.position -= new Vector3(1 * speed * Time.deltaTime, 0, 0);
            if (facingRight)
-            {
+           {
                 Flip();
-            }   
+           }
+           //playerAnim.SetFloat("Velocidade", Mathf.Abs(facingDirection));
         }
+        direcao = Input.GetAxisRaw("Horizontal");
+        playerAnim.SetFloat("Velocidade", Mathf.Abs(direcao));
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && !isMoving || Input.GetKeyDown(KeyCode.RightArrow) && !isMoving)
-        {
-            Moving();
+        Moving();
 
-          
-
-        }
+        //if (Input.GetKeyDown(KeyCode.LeftArrow) && !isMoving || Input.GetKeyDown(KeyCode.RightArrow) && !isMoving)
+       // {
+         //   Moving();
+        //}
         
 
-        if (Input.GetKeyUp(KeyCode.LeftArrow) && isMoving || Input.GetKeyUp(KeyCode.RightArrow) && isMoving)
-        {
-            Moving();
-        }
+       // if (Input.GetKeyUp(KeyCode.LeftArrow) && isMoving || Input.GetKeyUp(KeyCode.RightArrow) && isMoving)
+        //{
+         //   Moving();
+        //}
 
 
     }
 
     void Moving()
     {
-        isMoving = !isMoving;
-        anim.SetBool("isMoving", isMoving);
+        if(direcao == 0)
+        {
+            isMoving = false;
+        }
+        else
+        {
+            isMoving = true;
+        }
     }
 
     void Flip()
@@ -228,7 +233,7 @@ public class playerController : MonoBehaviour
     {
         // Tocar animacao
         isDead = true;
-        anim.SetBool("isDead", true);
+        playerAnim.SetBool("isDead", true);
         StartCoroutine(Dead());
         
     }
@@ -279,7 +284,4 @@ public class playerController : MonoBehaviour
     {
         return isMoving;
     }
-
-
-
 }
