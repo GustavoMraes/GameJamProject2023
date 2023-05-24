@@ -1889,7 +1889,7 @@ MonoBehaviour:
     m_Bits: 8
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   enemyRb: {fileID: 241392839}
   enemyAnim: {fileID: 0}
   moveSpeed: 2
@@ -2048,7 +2048,7 @@ MonoBehaviour:
     m_Bits: 8
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   enemyRb: {fileID: 270786466}
   enemyAnim: {fileID: 0}
   moveSpeed: 2
@@ -4321,7 +4321,7 @@ MonoBehaviour:
     m_Bits: 8
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   enemyRb: {fileID: 1530582125}
   enemyAnim: {fileID: 0}
   moveSpeed: 2
