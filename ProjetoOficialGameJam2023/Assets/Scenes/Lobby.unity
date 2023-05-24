@@ -1591,7 +1591,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  cena1: Cena de Teste
+  cena1: Imagens
 --- !u!58 &1498037576
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1937,7 +1937,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  cena1: Menu
+  cena1: Cena de teste
 --- !u!58 &1936938633
 CircleCollider2D:
   m_ObjectHideFlags: 0
