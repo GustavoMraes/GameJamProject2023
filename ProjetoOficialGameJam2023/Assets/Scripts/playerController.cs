@@ -112,7 +112,7 @@ public class playerController : MonoBehaviour
             target.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
         rb.velocity = Vector2.zero;
-        StartCoroutine("Freeze");
+        //StartCoroutine("Freeze");
 
         
     }

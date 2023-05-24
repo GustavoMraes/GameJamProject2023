@@ -46,10 +46,7 @@ public class BackgroundScroll : MonoBehaviour
         }
     }
 
-    // public void Seguir(Vector3 newPosition)
-    //{
-     //   transform.position = newPosition;
-    //}
+  
 
     private void FixedUpdate() //fazer a camera centralizar no personagem
     {
@@ -58,7 +55,7 @@ public class BackgroundScroll : MonoBehaviour
         newPosition = Vector3.Lerp(transform.position, newPosition, timeLerp);
 
         transform.position = newPosition;
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, transform.position.y, maxX), transform.position.y, 2);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX), transform.position.y, 2);
      //   background.Seguir(newPosition);
     }
 
