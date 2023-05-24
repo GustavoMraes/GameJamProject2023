@@ -131,11 +131,7 @@ public class Enemy : MonoBehaviour
         {
             direction = -1;
         }
-        if (rightEnemy.collider == null && followPlayer)
-        {
-            direction = 0;
-        }
-        if (rightEnemy.collider == null && playerDistance < 0)
+        if (rightEnemy.collider != null && playerDistance < 0)
         {
             direction = -1;
         }
@@ -146,11 +142,7 @@ public class Enemy : MonoBehaviour
         {
             direction = 1;
         }
-        if (leftEnemy.collider == null && followPlayer)
-        {
-            direction = 0;
-        }
-        if (leftEnemy.collider == null && playerDistance > 0)
+        if (leftEnemy.collider != null && playerDistance > 0)
         {
             direction = 1;
         }
@@ -161,11 +153,11 @@ public class Enemy : MonoBehaviour
         {
             direction = -1;
         }
-        if (rightWall.collider == null && followPlayer)
+        if (rightWall.collider != null && followPlayer)
         {
             direction = 0;
         }
-        if (rightWall.collider == null && playerDistance < 0)
+        if (rightWall.collider != null && playerDistance < 0)
         {
             direction = -1;
         }
@@ -176,11 +168,11 @@ public class Enemy : MonoBehaviour
         {
             direction = 1;
         }
-        if (leftWall.collider == null && followPlayer)
+        if (leftWall.collider != null && followPlayer)
         {
             direction = 0;
         }
-        if (leftWall.collider == null && playerDistance > 0)
+        if (leftWall.collider != null && playerDistance > 0)
         {
             direction = 1;
         }
