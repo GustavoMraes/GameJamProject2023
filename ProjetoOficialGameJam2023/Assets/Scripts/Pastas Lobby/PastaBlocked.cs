@@ -15,4 +15,10 @@ public class PastaBlocked : MonoBehaviour
     {
         
     }
+
+    public void liberar()
+    {
+        gameObject.SetActive(false);
+    }
+
 }

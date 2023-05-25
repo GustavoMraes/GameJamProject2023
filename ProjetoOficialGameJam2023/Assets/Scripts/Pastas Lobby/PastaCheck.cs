@@ -15,4 +15,9 @@ public class PastaCheck : MonoBehaviour
     {
         
     }
+
+    public void checkPasta()
+    {
+        gameObject.SetActive(true);
+    }
 }

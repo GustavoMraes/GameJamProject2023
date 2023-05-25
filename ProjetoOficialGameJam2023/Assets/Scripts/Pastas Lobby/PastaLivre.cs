@@ -15,4 +15,13 @@ public class PastaLivre : MonoBehaviour
     {
         
     }
+
+    void liberar()
+    {
+        gameObject.SetActive(true);
+    }
+    void finalizada()
+    {
+        gameObject.SetActive(false);
+    }
 }
