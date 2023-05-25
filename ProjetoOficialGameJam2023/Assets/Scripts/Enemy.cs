@@ -225,8 +225,7 @@ public class Enemy : MonoBehaviour
     {
         if (!recovering)
         {
-            //healthBarObject.SetActive(true);
-
+            Knockback();
             //enemyAnim.SetTrigger("hurt");
 
             health -= damage;
@@ -244,9 +243,23 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    void Knockback()
+    {
+        var playerDistance = player.gameObject.transform.position.x - transform.position.x;
+
+        if(playerDistance < 0)
+        {
+            enemyRb.AddForce(new Vector2(10 * 1, 10), ForceMode2D.Impulse);
+        }
+        if (playerDistance > 0)
+        {
+            enemyRb.AddForce(new Vector2(10 * -1, 10), ForceMode2D.Impulse);
+        }
+    }
+
     IEnumerator StopMove()
     {
-        enemyRb.velocity = Vector2.zero;
+        //enemyRb.velocity = Vector2.zero;
 
         canMove = false;
 

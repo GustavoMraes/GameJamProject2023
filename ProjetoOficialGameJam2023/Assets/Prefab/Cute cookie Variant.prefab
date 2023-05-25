@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: bf5c640fdc805e547bbaca7f505dc5d8, type: 2}
     - target: {fileID: 756640166877804662, guid: ef3aa669a97acd34b96ddf2744edaf1f, type: 3}
       propertyPath: m_Name
-      value: Cute cookie
+      value: Cute cookie Variant
       objectReference: {fileID: 0}
     - target: {fileID: 756640166877804664, guid: ef3aa669a97acd34b96ddf2744edaf1f, type: 3}
       propertyPath: m_RootOrder
@@ -66,6 +66,14 @@ PrefabInstance:
     - target: {fileID: 756640166877804666, guid: ef3aa669a97acd34b96ddf2744edaf1f, type: 3}
       propertyPath: player
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 756640166877804667, guid: ef3aa669a97acd34b96ddf2744edaf1f, type: 3}
+      propertyPath: m_LinearDrag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 756640166877804667, guid: ef3aa669a97acd34b96ddf2744edaf1f, type: 3}
+      propertyPath: m_GravityScale
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef3aa669a97acd34b96ddf2744edaf1f, type: 3}
