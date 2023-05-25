@@ -15,14 +15,21 @@ public class BattleSystem : MonoBehaviour
 
     public BattleHUD playerHUD;
     public BattleHUD enemyHUD;
-    //public Text playerName;
-    //public Text enemyName;
     public Text dialogueText;
 
     public BattleState state;
+
+    private int enemyAttackCount = 0;
+    private bool enemyIsDead = false;
+    private int playerAttackCount = 0;
+    private bool playerIsDead = false;
+    private bool canHeal = true;
+
+    public GameObject gameObject;
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.SetActive(false);
         state = BattleState.START;
         StartCoroutine(SetupBattle());
     }
@@ -47,10 +54,12 @@ public class BattleSystem : MonoBehaviour
     IEnumerator PlayerAttack()
     {
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+        playerAttackCount += 1;
 
         enemyHUD.SetHP(enemyUnit.currentHealth);
         dialogueText.text = "O ataque acertou";
 
+        canHeal = true;
         yield return new WaitForSeconds(2f);
 
         if (isDead)
@@ -63,7 +72,6 @@ public class BattleSystem : MonoBehaviour
             state = BattleState.ENEMYTURN;
             StartCoroutine(EnemyTurn());
         }
-        //change state based on what happened
     }
 
     IEnumerator EnemyTurn()
@@ -72,7 +80,9 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+        bool isDead = EnemyDealDamage();
+
+        //bool 
 
         playerHUD.SetHP(playerUnit.currentHealth);
 
@@ -90,6 +100,23 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    public bool EnemyDealDamage()
+    {        
+        if(enemyAttackCount < 5)
+        {
+            enemyIsDead = playerUnit.TakeDamage(enemyUnit.damage);           //Ataque Normal
+            enemyAttackCount += 1;                                     //Aumenta o contador de ataques
+            dialogueText.text ="Ataque normal";
+        } else if(enemyAttackCount == 5)
+        {
+            enemyIsDead = playerUnit.TakeDamage(30);
+            enemyAttackCount = 0;
+            dialogueText.text ="Ataque supremo";
+        }
+
+        return enemyIsDead;
+    }
+
     void EndBattle()
     {
         if (state == BattleState.WON)
@@ -104,8 +131,60 @@ public class BattleSystem : MonoBehaviour
     }
 
     void PlayerTurn()
-    {
+    { 
         dialogueText.text = "Escolha sua ação: ";
+        StartCoroutine(specialButton());
+    }
+
+    IEnumerator specialButton()
+    {
+        if (playerAttackCount < 3)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+        }
+        yield return new WaitForSeconds(0.1f);  
+    }
+
+    public void OnSpecialAttackButton()
+    {
+        if(playerAttackCount < 3)
+        {
+            return;
+        }
+        if (state != BattleState.PLAYERTURN)
+        {
+            return;
+        }
+
+        StartCoroutine(PlayerSpecialAttack());
+    }
+
+    IEnumerator PlayerSpecialAttack()
+    {
+        bool isDead = enemyUnit.TakeDamage((playerUnit.damage * 2));
+        playerAttackCount = 0;
+
+        enemyHUD.SetHP(enemyUnit.currentHealth);
+        dialogueText.text = "O ataque acertou";
+
+        canHeal = true;
+        yield return new WaitForSeconds(2f);
+        gameObject.SetActive(false);
+
+        if (isDead)
+        {
+            state = BattleState.WON;
+            EndBattle();
+        }
+        else
+        {
+            state = BattleState.ENEMYTURN;
+            StartCoroutine(EnemyTurn());
+        }
     }
 
     public void OnAttackButton()
@@ -114,7 +193,7 @@ public class BattleSystem : MonoBehaviour
         {
             return;
         }
-
+        
         StartCoroutine(PlayerAttack());
     }
 
@@ -130,7 +209,11 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerHeal()
     {
-        playerUnit.Heal(5);
+        playerAttackCount += 1;
+        if (canHeal == true) 
+        { 
+        canHeal = false;
+        playerUnit.Heal(15);
         playerHUD.SetHP(playerUnit.currentHealth);
 
         dialogueText.text = "Você sente uma energia revigorante!";
@@ -139,5 +222,13 @@ public class BattleSystem : MonoBehaviour
 
         state = BattleState.ENEMYTURN;
         StartCoroutine(EnemyTurn());
+        }
+        else
+        {
+            state = BattleState.PLAYERTURN;
+            dialogueText.text = "Não foi possivel curar nesse turno";
+            yield return new WaitForSeconds(2f);
+            PlayerTurn();            
+        }
     }
 }
