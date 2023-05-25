@@ -284,4 +284,16 @@ public class playerController : MonoBehaviour
     {
         return isMoving;
     }
+
+    public void Curar(int cura)
+    {
+        if ((health + cura) > 10)
+        {
+            health = 10;
+        }
+        else
+        {
+            health = health + cura;
+        }
+    }
 }
