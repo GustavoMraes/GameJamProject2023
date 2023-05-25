@@ -48,15 +48,25 @@ public class BackgroundScroll : MonoBehaviour
 
   
 
-    private void FixedUpdate() //fazer a camera centralizar no personagem
+    private void FixedUpdate() 
     {
-        Vector3 newPosition = playerLocal.position + new Vector3(0, 0, -5);
-        //newPosition.y = 0.1f;
+        Vector3 newPosition = playerLocal.position + new Vector3(0, 0, -5);   
+        
         newPosition = Vector3.Lerp(transform.position, newPosition, timeLerp);
 
         transform.position = newPosition;
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX), transform.position.y, 2);
-     //   background.Seguir(newPosition);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX), transform.position.y, 2);    
+    }
+
+
+    public void ligarFundo()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void desligarFundo()
+    {
+        gameObject.SetActive(false);
     }
 
 
