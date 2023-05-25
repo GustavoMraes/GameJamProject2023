@@ -11,11 +11,8 @@ public class FundoCaverna : MonoBehaviour
     public float minX, maxX;
     public float timeLerp;
     public playerController player;
-
-
-    public Transform playerLocal;
-    private float EntrouCavernaX = 85.5f;
-    private float SaiuCavernaX = 247.2f;
+    public Transform playerLocal;  
+    
 
     public bool estaligada = false;
 
