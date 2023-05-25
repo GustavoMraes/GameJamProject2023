@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     private RaycastHit2D leftEnemy;         //verificador de inimigo a esquerda
 
     public bool facingLeft = false;         // verificador da posicao do sprite
-    private bool canMove = true;            //Verificar se pode se mover
+    private bool canMove = true;            // Verificar se pode se mover
     private bool recovering;                // verificar se pode tomar dano ou nao
     private float recoveringCounter;        // contador ate ser possivel tomar dano
     SpriteRenderer spriteRenderer;
