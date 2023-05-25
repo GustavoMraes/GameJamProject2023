@@ -51,6 +51,8 @@ public class playerController : MonoBehaviour
     private bool isDead = false;
     public GameObject gameOverPanel;
 
+    public int cookies;
+
 
     // Start is called before the first frame update
     void Start()
@@ -307,5 +309,10 @@ public class playerController : MonoBehaviour
     public void Mola()
     {        
         rb.AddForce(transform.up * 3500);
+    }
+
+    public void GanharCookie()
+    {
+        cookies = cookies + 1;
     }
 }
