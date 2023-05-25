@@ -18,10 +18,12 @@ public class playerController : MonoBehaviour
     private float attackTimer;          // calculo do cooldown de ataque
 
     [Header("Parametros Player")]
+    public int maxHealth = 10;
     public int health;                  // Vida
     public float forca = 5;             // forca do pulo
     public int numeroPulos = 2;         // quantidade de pulos
     public float recoveryTime;          // Cooldown de recuperacao
+    public HealthBar healthBar;
 
     [Header("Combate")]
     public int attackDamage;            // Dano por ataque
@@ -29,8 +31,8 @@ public class playerController : MonoBehaviour
     public float attackRange;           // alcance do ataque
     public float attackCooldown;        // cooldown do ataque
     public LayerMask enemyLayers;       // Layers do inimigo
-    public Transform healthBar;         // Barra de vida verde
-    public GameObject healthBarObject;  // Objeto pai das barras
+    //public Transform healthBar;         // Barra de vida verde
+    //public GameObject healthBarObject;  // Objeto pai das barras
 
     private Vector3 healthBarScale;     // Tamanho da barra
     private float healthPercent;        // Percentual de vida para o calculo do tamanho da barra
@@ -53,19 +55,20 @@ public class playerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        healthBar.SetMaxHealth(maxHealth);
         Time.timeScale = 1f;
-        healthBarScale = healthBar.localScale;
-        healthPercent = healthBarScale.x / health;
+        //healthBarScale = healthBar.localScale;
+        //healthPercent = healthBarScale.x / health;
         playerAnim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void UpdateHealthBar()
-    {
-        healthBarScale.x = healthPercent * health;
-        healthBar.localScale = healthBarScale;
-    }
+    //void UpdateHealthBar()
+    //{
+    //    healthBarScale.x = healthPercent * health;
+    //    healthBar.localScale = healthBarScale;
+    //}
 
     // Update is called once per frame
     void Update()
@@ -218,7 +221,9 @@ public class playerController : MonoBehaviour
             Knockback();
             //vCam.GetComponent<CameraController>().CameraShake();
             health -= damage;
-            UpdateHealthBar();
+
+            healthBar.SetHealth(health);
+            //UpdateHealthBar();
 
             recovering = true;
 
@@ -290,10 +295,12 @@ public class playerController : MonoBehaviour
         if ((health + cura) > 10)
         {
             health = 10;
+            healthBar.SetHealth(health);
         }
         else
         {
             health = health + cura;
+            healthBar.SetHealth(health);
         }
     }
 
