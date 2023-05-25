@@ -48,7 +48,7 @@ public class BattleSystem : MonoBehaviour
     {
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
 
-        enemyHUD.SetHP(enemyUnit.currentHP);
+        enemyHUD.SetHP(enemyUnit.currentHealth);
         dialogueText.text = "O ataque acertou";
 
         yield return new WaitForSeconds(2f);
@@ -66,12 +66,36 @@ public class BattleSystem : MonoBehaviour
         //change state based on what happened
     }
 
+    IEnumerator EnemyTurn()
+    {
+        dialogueText.text = enemyUnit.unitName + " ataca!!";
+
+        yield return new WaitForSeconds(2f);
+
+        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+
+        playerHUD.SetHP(playerUnit.currentHealth);
+
+        yield return new WaitForSeconds(1f);
+
+        if (isDead)
+        {
+            state = BattleState.LOST;
+            EndBattle();
+        }
+        else
+        {
+            state = BattleState.PLAYERTURN;
+            PlayerTurn();
+        }
+    }
+
     void EndBattle()
     {
         if(state == BattleState.WON)
         {
             dialogueText.text = "Você ganhou a batalha";
-        } else if(state = BattleState.LOST)
+        } else if(state == BattleState.LOST)
         {
             dialogueText.text = "Você foi derrotado";
         }
