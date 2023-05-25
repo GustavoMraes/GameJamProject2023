@@ -27,7 +27,6 @@ public class EntradaCaverna : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            caverna = FindObjectOfType<FundoCaverna>();
             caverna.ligarFundo();
             praia.desligarFundo();
             fundo.desligarFundo();
