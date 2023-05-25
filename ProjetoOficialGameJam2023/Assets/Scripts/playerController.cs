@@ -296,4 +296,9 @@ public class playerController : MonoBehaviour
             health = health + cura;
         }
     }
+
+    public void Mola()
+    {        
+        rb.AddForce(transform.up * 3500);
+    }
 }
