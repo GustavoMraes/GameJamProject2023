@@ -55,7 +55,6 @@ public class Enemy : MonoBehaviour
     {
         healthBarScale = healthBar.localScale;
         healthPercent = healthBarScale.x / health;
-        //healthBarObject.SetActive(false);
     }
 
     void UpdateHealthBar()

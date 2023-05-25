@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CapsuleCollider2D))]
@@ -52,8 +53,7 @@ public class playerController : MonoBehaviour
     public GameObject gameOverPanel;
 
     public int cookies;
-
-
+    public Text quantidadeText;
     // Start is called before the first frame update
     void Start()
     {
@@ -314,5 +314,6 @@ public class playerController : MonoBehaviour
     public void GanharCookie()
     {
         cookies = cookies + 1;
+        quantidadeText.text = "" + cookies;   
     }
 }
