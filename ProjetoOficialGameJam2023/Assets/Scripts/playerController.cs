@@ -114,8 +114,10 @@ public class playerController : MonoBehaviour
 
         foreach (Collider2D target in targets)
         {
-            target.GetComponent<Enemy>().TakeDamage(attackDamage);
+            //target.GetComponent<Enemy>().TakeDamage(attackDamage);
+            target.GetComponent<BossHealth>().TakeDamage(attackDamage);
         }
+
         rb.velocity = Vector2.zero;
         //StartCoroutine("Freeze");
 

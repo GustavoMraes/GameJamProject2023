@@ -6,8 +6,13 @@ public class Boss : MonoBehaviour
 {
 
 	public Transform player;
-
 	public bool isFlipped = false;
+	public playerController playerC;
+
+	void Start()
+	{
+		playerC = FindObjectOfType<playerController>();
+    }
 
 	public void LookAtPlayer()
 	{
