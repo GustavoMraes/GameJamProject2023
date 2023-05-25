@@ -1545,7 +1545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Player
-  damage: 5
+  damage: 3
   maxHealth: 10
   currentHealth: 10
 --- !u!1 &1870086352
