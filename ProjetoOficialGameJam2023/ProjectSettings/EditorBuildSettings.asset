@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cena de teste.unity
     guid: bed386886adb3914bbe38ccaef500f36
+  - enabled: 1
+    path: "Assets/Scenes/M\xFAsicas.unity"
+    guid: c856892889787e041b4c8eebb8172b43
   m_configObjects: {}
