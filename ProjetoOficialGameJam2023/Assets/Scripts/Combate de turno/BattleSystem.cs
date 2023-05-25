@@ -33,7 +33,7 @@ public class BattleSystem : MonoBehaviour
 
         enemyUnit = enemy.GetComponent<Unit>();
 
-        dialogueText.text = "A " +enemyUnit.unitName+  " approaches";
+        dialogueText.text = "A " + enemyUnit.unitName + " approaches";
 
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
@@ -53,7 +53,7 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        if(isDead)
+        if (isDead)
         {
             state = BattleState.WON;
             EndBattle();
@@ -92,14 +92,15 @@ public class BattleSystem : MonoBehaviour
 
     void EndBattle()
     {
-        if(state == BattleState.WON)
+        if (state == BattleState.WON)
         {
             dialogueText.text = "Você ganhou a batalha";
-        } else if(state == BattleState.LOST)
+        }
+        else if (state == BattleState.LOST)
         {
             dialogueText.text = "Você foi derrotado";
         }
-        
+
     }
 
     void PlayerTurn()
@@ -109,11 +110,34 @@ public class BattleSystem : MonoBehaviour
 
     public void OnAttackButton()
     {
-        if(state != BattleState.PLAYERTURN)
+        if (state != BattleState.PLAYERTURN)
         {
             return;
         }
 
         StartCoroutine(PlayerAttack());
+    }
+
+    public void OnHealButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+        {
+            return;
+        }
+
+        StartCoroutine(PlayerHeal());
+    }
+
+    IEnumerator PlayerHeal()
+    {
+        playerUnit.Heal(5);
+        playerHUD.SetHP(playerUnit.currentHealth);
+
+        dialogueText.text = "Você sente uma energia revigorante!";
+
+        yield return new WaitForSeconds(2f);
+
+        state = BattleState.ENEMYTURN;
+        StartCoroutine(EnemyTurn());
     }
 }

@@ -26,4 +26,13 @@ public class Unit : MonoBehaviour
             return false;
         }
     }
+
+    public void Heal(int amount)
+    {
+        currentHealth += amount;
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+    }
 }
