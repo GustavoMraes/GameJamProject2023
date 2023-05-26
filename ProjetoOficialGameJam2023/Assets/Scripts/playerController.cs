@@ -13,9 +13,6 @@ public class playerController : MonoBehaviour
 
     public static int nivel=0;
 
-
-
-
     [SerializeField] float speed;       // velocidade de movimento
     SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
@@ -48,7 +45,7 @@ public class playerController : MonoBehaviour
     private bool facingRight = true;    // olhando para direita/esquerda
     private int facingDirection = 1;    // 1 direita / -1 esquerda
     private bool recovering;            // Esta se recuperando de um ataque
-    private bool canMove = true;        // Permite/bloqueia a movimentacao
+    public bool canMove = true;        // Permite/bloqueia a movimentacao
 
     private float direcao = 1;
 
@@ -61,6 +58,11 @@ public class playerController : MonoBehaviour
 
     private bool boss = false;
     private bool inimigo = false;
+
+    public void SetCanMove(bool x)
+    {
+        canMove = x;
+    }
 
     void Start()
     {
