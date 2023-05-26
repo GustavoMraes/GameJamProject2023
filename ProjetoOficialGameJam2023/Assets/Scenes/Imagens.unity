@@ -289,7 +289,7 @@ MonoBehaviour:
   forca: 1100
   numeroPulos: 2
   recoveryTime: 1
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 163021624}
   attackDamage: 4
   attackHit: {fileID: 664705461}
   attackRange: 0.8
@@ -428,6 +428,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &163021624 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 146214422064542084, guid: d6f2591f2fc910847b391f6799b9630f, type: 3}
+  m_PrefabInstance: {fileID: 952766412}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d0cf30ad13fd745b0415cee74ee897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &181803944
 GameObject:
   m_ObjectHideFlags: 0
