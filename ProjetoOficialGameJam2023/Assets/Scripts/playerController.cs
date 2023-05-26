@@ -32,8 +32,6 @@ public class playerController : MonoBehaviour
     public float attackRange;           // alcance do ataque
     public float attackCooldown;        // cooldown do ataque
     public LayerMask enemyLayers;       // Layers do inimigo
-    //public Transform healthBar;         // Barra de vida verde
-    //public GameObject healthBarObject;  // Objeto pai das barras
 
     private Vector3 healthBarScale;     // Tamanho da barra
     private float healthPercent;        // Percentual de vida para o calculo do tamanho da barra
@@ -54,6 +52,9 @@ public class playerController : MonoBehaviour
 
     public int cookies;
     public Text quantidadeText;
+
+    private bool boss = false;
+    private bool inimigo = false;
 
     void Start()
     {
@@ -100,25 +101,25 @@ public class playerController : MonoBehaviour
 
     private void Attack()
     {
+        boss = false;
         StartCoroutine("AttackAnim");
         Collider2D[] targets = Physics2D.OverlapCircleAll(attackHit.position, attackRange, enemyLayers);
 
             foreach (Collider2D target in targets)
             {
                 target.GetComponent<Enemy>().TakeDamage(attackDamage);
-                // target.GetComponent<BossHealth>().TakeDamage(attackDamage);
             }
         rb.velocity = Vector2.zero;
     }
 
     private void AttackBoss()
     {
+        inimigo = false;
         StartCoroutine("AttackAnim");
         Collider2D[] targets = Physics2D.OverlapCircleAll(attackHit.position, attackRange, enemyLayers);
 
         foreach (Collider2D target in targets)
         {
-            //target.GetComponent<Enemy>().TakeDamage(attackDamage);
             target.GetComponent<BossHealth>().TakeDamage(attackDamage);
         }
 
@@ -147,20 +148,19 @@ public class playerController : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.X) && isGround)
             {
+                if(!boss && !inimigo)
+                {
+                    StartCoroutine("AttackAnim");
+                }
                 Collider2D[] targets = Physics2D.OverlapCircleAll(attackHit.position, attackRange, enemyLayers);
                 foreach (Collider2D target in targets)
                 {
-                    var inimigo = target.gameObject.tag == "Inimigo";
-                    var boss = target.gameObject.tag == "Boss";
+                    inimigo = target.gameObject.tag == "Inimigo";
+                    boss = target.gameObject.tag == "Boss";
                     if (boss)
                     {
                         AttackBoss();
-                    }
-                    if (inimigo)
-                    {
-                        Attack();
-                    }
-                    else
+                    }else if (inimigo)
                     {
                         Attack();
                     }
