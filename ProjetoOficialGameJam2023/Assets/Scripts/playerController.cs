@@ -10,6 +10,12 @@ using UnityEngine.UI;
 [RequireComponent(typeof(CapsuleCollider2D))]
 public class playerController : MonoBehaviour
 {
+
+    public static int nivel=0;
+
+
+
+
     [SerializeField] float speed;       // velocidade de movimento
     SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
@@ -335,5 +341,13 @@ public class playerController : MonoBehaviour
     {
         cookies = cookies + 1;
         quantidadeText.text = "" + cookies;   
+    }
+    public void SubirNivel()
+    {
+        nivel += 1;
+    }
+    public int VerNivel()
+    {
+        return nivel;
     }
 }

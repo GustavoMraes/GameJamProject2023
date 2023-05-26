@@ -11,7 +11,7 @@ public class EntradaCaverna : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        caverna = FindObjectOfType<FundoCaverna>();        
+        //caverna = FindObjectOfType<FundoCaverna>();        
         praia = FindObjectOfType<BackgroundScroll>();
         fundo = FindObjectOfType<FundoBlocos>();
     }

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Collider2D))]
 public class InteractObject : MonoBehaviour
 {
+    public int identificador;
     [SerializeField]
     private PlayerInteract playerInteract;
 
@@ -15,6 +16,14 @@ public class InteractObject : MonoBehaviour
 
     private bool canExecute;
     public string cena1;
+    
+
+    public OrganizarPastas gerarComandos;
+    
+    void Start()
+    {
+        gerarComandos = FindObjectOfType<OrganizarPastas>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -24,6 +33,7 @@ public class InteractObject : MonoBehaviour
             if (playerInteract.isInteracting == true)
             {
                 botaoApertado.Invoke();
+
             }
         }
     }
@@ -40,6 +50,24 @@ public class InteractObject : MonoBehaviour
 
     public void NextScene()
     {
-        SceneManager.LoadScene(cena1);
+        if (identificador == 0)
+        {
+            // gerarComandos.Fase1Check();
+            SceneManager.LoadScene("Imagens");
+        }
+        if (identificador == 1)
+        {
+            //gerarComandos.Fase2Check();
+             SceneManager.LoadScene("Músicas");
+
+        }
+
+        if (identificador == 2)
+        {
+            gerarComandos.Fase3Check();
+            // SceneManager.LoadScene("Documentos");
+
+        }
+
     }
 }

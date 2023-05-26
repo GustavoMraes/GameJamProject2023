@@ -7,22 +7,41 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Collider2D))]
 public class Voltar : MonoBehaviour
 {
+
+    public playerController player;
+    private int nivel;
+
+
     [SerializeField]
     private PlayerInteract playerInteract;
 
     [SerializeField]
     private UnityEvent botaoApertado;
 
-    private bool canExecute;    
+    private bool canExecute;
+    public string cena1;
+
+    void Start()
+    {
+        player = FindObjectOfType<playerController>();
+        playerInteract = FindObjectOfType<PlayerInteract>();
+        cena1 = "Lobby";
+    }
+
+    
+
+    
 
     // Update is called once per frame
     void Update()
     {
+        
         if (canExecute)
         {
             if (playerInteract.isInteracting == true)
             {
                 botaoApertado.Invoke();
+
             }
         }
     }
@@ -39,6 +58,8 @@ public class Voltar : MonoBehaviour
 
     public void NextScene()
     {
-        SceneManager.LoadScene("Lobby");
+        player.SubirNivel();
+        SceneManager.LoadScene(cena1);
+
     }
 }

@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class PastaLivre : MonoBehaviour
 {
+    public int identificador;
+   
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (identificador != 0)
+        {
+            gameObject.SetActive(true);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+            
     }
 
     // Update is called once per frame
@@ -24,4 +34,7 @@ public class PastaLivre : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    
+
 }

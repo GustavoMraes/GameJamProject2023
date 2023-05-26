@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class BossHealth : MonoBehaviour
 {
 
+
 	public int health = 500;
 
 	public GameObject deathEffect;
@@ -15,6 +16,15 @@ public class BossHealth : MonoBehaviour
 	public bool isInvulnerable = false;
 
 	public string lobby;
+
+
+    public playerController player;
+    private int nivel;
+	
+	void Start()
+	{
+        player = FindObjectOfType<playerController>();
+    }
 
     public void TakeDamage(int damage)
 	{
@@ -39,7 +49,9 @@ public class BossHealth : MonoBehaviour
 		animator.SetBool("isDead", true);
 
         yield return new WaitForSeconds(5f);
+        player.SubirNivel();
         SceneManager.LoadScene(lobby);
+		
     }
     public int quantodevida()
     {

@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class BarraVerificacao : MonoBehaviour
 {
+    public int identificador;
     // Start is called before the first frame update
     void Start()
     {
+        if (identificador == 0)
+        {
+            gameObject.SetActive(true);
+        } else
+        {
+
+        }
             
     }
 
