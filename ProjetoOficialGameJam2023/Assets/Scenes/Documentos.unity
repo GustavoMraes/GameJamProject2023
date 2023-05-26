@@ -2057,6 +2057,7 @@ GameObject:
   - component: {fileID: 986724286}
   - component: {fileID: 986724285}
   - component: {fileID: 986724284}
+  - component: {fileID: 986724287}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2130,6 +2131,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &986724287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986724283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a3864e4bd427f04caf73f7a683a6bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1232785474}
+  minX: 0.1
+  maxX: 80
+  timeLerp: 0.05
+  background: {fileID: 0}
 --- !u!1001 &1225353844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2278,7 +2296,7 @@ MonoBehaviour:
   forca: 900
   numeroPulos: 2
   recoveryTime: 1
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1256869510}
   attackDamage: 4
   attackHit: {fileID: 1740694504}
   attackRange: 0.8
@@ -2290,7 +2308,7 @@ MonoBehaviour:
   isGround: 0
   gameOverPanel: {fileID: 0}
   cookies: 0
-  quantidadeText: {fileID: 0}
+  quantidadeText: {fileID: 1457100951}
 --- !u!50 &1232785470
 Rigidbody2D:
   serializedVersion: 4
@@ -2417,6 +2435,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1256869510 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 146214422064542084, guid: d6f2591f2fc910847b391f6799b9630f, type: 3}
+  m_PrefabInstance: {fileID: 1225353844}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d0cf30ad13fd745b0415cee74ee897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1284153387
 GameObject:
   m_ObjectHideFlags: 0
@@ -5702,6 +5731,17 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
+--- !u!114 &1457100951 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 146214422269704078, guid: d6f2591f2fc910847b391f6799b9630f, type: 3}
+  m_PrefabInstance: {fileID: 1225353844}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1578342039
 GameObject:
   m_ObjectHideFlags: 0
@@ -5833,9 +5873,9 @@ GameObject:
   - component: {fileID: 1811513790}
   - component: {fileID: 1811513789}
   - component: {fileID: 1811513788}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Caio
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
