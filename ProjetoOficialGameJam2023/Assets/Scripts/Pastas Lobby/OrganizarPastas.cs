@@ -5,8 +5,8 @@ using UnityEngine;
 public class OrganizarPastas : MonoBehaviour
 {
      public PastaCheck pasta1check;
-    public PastaLivre pasta1livre;
-    public PastaLivre pasta2livre;
+     public PastaLivre pasta1livre;
+     public PastaLivre pasta2livre;
      public PastaBlocked pasta2disblock;
      public BarraVerificacao zero;
      public BarraVerificacao primeiro;
@@ -89,7 +89,7 @@ public class OrganizarPastas : MonoBehaviour
     {
         pasta2check.checkPasta();
         pasta2livre.finalizada();
-        pasta3livre.liberar();
+        pasta3livre.liberarPasta3();
         pasta3disblock.liberar();
         primeiro.desligarBarra();
         segundo.ligarBarra();

@@ -35,6 +35,11 @@ public class PastaLivre : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public void liberarPasta3() 
+    {
+        identificador = 1;
+    }
+
     
 
 }

@@ -64,8 +64,8 @@ public class InteractObject : MonoBehaviour
 
         if (identificador == 2)
         {
-            gerarComandos.Fase3Check();
-            // SceneManager.LoadScene("Documentos");
+            //gerarComandos.Fase3Check();
+            SceneManager.LoadScene("Documentos");
 
         }
 
