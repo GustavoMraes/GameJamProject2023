@@ -275,10 +275,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cuidado!! Os cookies sao agressivos, pressione X para atacar
+  m_text: "Eu tomaria cuidado com o ch\xE3o se eu fosse voc\xEA."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: eecce779f1de3cf439efd569ff8a2e7b, type: 2}
-  m_sharedMaterial: {fileID: -9171981587089265322, guid: eecce779f1de3cf439efd569ff8a2e7b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ee2f1dfd72228d04b9257037e7c9b4b0, type: 2}
+  m_sharedMaterial: {fileID: 3431389017026714661, guid: ee2f1dfd72228d04b9257037e7c9b4b0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
