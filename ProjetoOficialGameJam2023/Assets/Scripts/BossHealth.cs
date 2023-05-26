@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossHealth : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class BossHealth : MonoBehaviour
 	public Animator animator;
 
 	public bool isInvulnerable = false;
+
+	public string lobby;
 
 	public void TakeDamage(int damage)
 	{
@@ -35,9 +38,8 @@ public class BossHealth : MonoBehaviour
 	{
 		animator.SetBool("isDead", true);
 
-		yield return new WaitForSeconds(10f);
-
-        Destroy(gameObject);
+		yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(lobby);
     }
     public int quantodevida()
     {
