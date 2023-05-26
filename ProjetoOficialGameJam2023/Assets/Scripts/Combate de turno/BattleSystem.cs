@@ -40,7 +40,7 @@ public class BattleSystem : MonoBehaviour
 
         enemyUnit = enemy.GetComponent<Unit>();
 
-        dialogueText.text = "A " + enemyUnit.unitName + " approaches";
+        dialogueText.text = "O " + enemyUnit.unitName + " se aproxima";
 
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);

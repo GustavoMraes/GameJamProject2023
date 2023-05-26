@@ -11,7 +11,7 @@ public class BattleHUD : MonoBehaviour
 
     public void SetHUD(Unit unit)
     {
-        nameText.text = unit.unitName;
+        //nameText.text = unit.unitName;
         hpSlider.maxValue = unit.maxHealth;
         hpSlider.value = unit.currentHealth;
     }
