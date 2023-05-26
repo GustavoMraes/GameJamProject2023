@@ -150,8 +150,8 @@ public class playerController : MonoBehaviour
                 Collider2D[] targets = Physics2D.OverlapCircleAll(attackHit.position, attackRange, enemyLayers);
                 foreach (Collider2D target in targets)
                 {
-                    var inimigo = gameObject.tag == "Inimigo";
-                    var boss = gameObject.tag == "Boss";
+                    var inimigo = target.gameObject.tag == "Inimigo";
+                    var boss = target.gameObject.tag == "Boss";
                     if (boss)
                     {
                         AttackBoss();
