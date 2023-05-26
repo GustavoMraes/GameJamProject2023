@@ -284,7 +284,7 @@ public class playerController : MonoBehaviour
     {
         GameOver();
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Lobby");
     }
 
     void Knockback()
