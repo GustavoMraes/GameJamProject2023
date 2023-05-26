@@ -9,6 +9,8 @@ public class BossHealth : MonoBehaviour
 
 	public GameObject deathEffect;
 
+	public Animator animator;
+
 	public bool isInvulnerable = false;
 
 	public void TakeDamage(int damage)
@@ -25,15 +27,18 @@ public class BossHealth : MonoBehaviour
 
 		if (health <= 0)
 		{
-			Die();
+			StartCoroutine(Die());
 		}
 	}
 
-	void Die()
+	IEnumerator Die()
 	{
-		Instantiate(deathEffect, transform.position, Quaternion.identity);
-		Destroy(gameObject);
-	}
+		animator.SetBool("isDead", true);
+
+		yield return new WaitForSeconds(10f);
+
+        Destroy(gameObject);
+    }
     public int quantodevida()
     {
         return health;
