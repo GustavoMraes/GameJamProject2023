@@ -160,6 +160,10 @@ public class playerController : MonoBehaviour
                     {
                         Attack();
                     }
+                    else
+                    {
+                        Attack();
+                    }
                 }
                
                 attackTimer = attackCooldown;
