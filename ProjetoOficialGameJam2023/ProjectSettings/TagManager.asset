@@ -10,6 +10,7 @@ TagManager:
   - Fase2
   - Fase3
   - Fase4
+  - Boss
   layers:
   - Default
   - TransparentFX

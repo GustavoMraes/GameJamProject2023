@@ -103,12 +103,11 @@ public class playerController : MonoBehaviour
         StartCoroutine("AttackAnim");
         Collider2D[] targets = Physics2D.OverlapCircleAll(attackHit.position, attackRange, enemyLayers);
 
-        foreach (Collider2D target in targets)
-        {
-            target.GetComponent<Enemy>().TakeDamage(attackDamage);
-            // target.GetComponent<BossHealth>().TakeDamage(attackDamage);
-        }
-
+            foreach (Collider2D target in targets)
+            {
+                target.GetComponent<Enemy>().TakeDamage(attackDamage);
+                // target.GetComponent<BossHealth>().TakeDamage(attackDamage);
+            }
         rb.velocity = Vector2.zero;
     }
 
@@ -148,8 +147,21 @@ public class playerController : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.X) && isGround)
             {
-                Attack();
-                AttackBoss();
+                Collider2D[] targets = Physics2D.OverlapCircleAll(attackHit.position, attackRange, enemyLayers);
+                foreach (Collider2D target in targets)
+                {
+                    var inimigo = gameObject.tag == "Inimigo";
+                    var boss = gameObject.tag == "Boss";
+                    if (boss)
+                    {
+                        AttackBoss();
+                    }
+                    if (inimigo)
+                    {
+                        Attack();
+                    }
+                }
+               
                 attackTimer = attackCooldown;
             }
         }
