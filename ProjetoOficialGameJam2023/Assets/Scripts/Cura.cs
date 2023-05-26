@@ -22,8 +22,12 @@ public class Cura : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        gameObject.SetActive(false);
-        player.Curar(3);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            gameObject.SetActive(false);
+            player.Curar(3);
+        }
+
     }
 
 }

@@ -54,25 +54,16 @@ public class playerController : MonoBehaviour
 
     public int cookies;
     public Text quantidadeText;
-    // Start is called before the first frame update
+
     void Start()
     {
         healthBar.SetMaxHealth(maxHealth);
         Time.timeScale = 1f;
-        //healthBarScale = healthBar.localScale;
-        //healthPercent = healthBarScale.x / health;
         playerAnim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
 
-    //void UpdateHealthBar()
-    //{
-    //    healthBarScale.x = healthPercent * health;
-    //    healthBar.localScale = healthBarScale;
-    //}
-
-    // Update is called once per frame
     void Update()
     {
 
@@ -115,12 +106,26 @@ public class playerController : MonoBehaviour
         foreach (Collider2D target in targets)
         {
             target.GetComponent<Enemy>().TakeDamage(attackDamage);
+            // target.GetComponent<BossHealth>().TakeDamage(attackDamage);
         }
-        rb.velocity = Vector2.zero;
-        //StartCoroutine("Freeze");
 
-        
+        rb.velocity = Vector2.zero;
     }
+
+    private void AttackBoss()
+    {
+        StartCoroutine("AttackAnim");
+        Collider2D[] targets = Physics2D.OverlapCircleAll(attackHit.position, attackRange, enemyLayers);
+
+        foreach (Collider2D target in targets)
+        {
+            //target.GetComponent<Enemy>().TakeDamage(attackDamage);
+            target.GetComponent<BossHealth>().TakeDamage(attackDamage);
+        }
+
+        rb.velocity = Vector2.zero;
+    }
+
     IEnumerator AttackAnim()
     {
         playerAnim.SetBool("Attack", true);
@@ -144,6 +149,7 @@ public class playerController : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.X) && isGround)
             {
                 Attack();
+                AttackBoss();
                 attackTimer = attackCooldown;
             }
         }
@@ -181,18 +187,6 @@ public class playerController : MonoBehaviour
         playerAnim.SetFloat("Velocidade", Mathf.Abs(direcao));
 
         Moving();
-
-        //if (Input.GetKeyDown(KeyCode.LeftArrow) && !isMoving || Input.GetKeyDown(KeyCode.RightArrow) && !isMoving)
-       // {
-         //   Moving();
-        //}
-        
-
-       // if (Input.GetKeyUp(KeyCode.LeftArrow) && isMoving || Input.GetKeyUp(KeyCode.RightArrow) && isMoving)
-        //{
-         //   Moving();
-        //}
-
 
     }
 
