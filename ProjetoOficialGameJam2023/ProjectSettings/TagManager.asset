@@ -11,6 +11,7 @@ TagManager:
   - Fase3
   - Fase4
   - Boss
+  - Gelo
   layers:
   - Default
   - TransparentFX

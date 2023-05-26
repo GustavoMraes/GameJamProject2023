@@ -90,6 +90,7 @@ public class playerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "ground") //verificar se o personagem esta no chao
         {
+            canMove = true;
             isGround = true;
             numeroPulos = 2; //resetar quantidade de pulos
         }
@@ -97,6 +98,15 @@ public class playerController : MonoBehaviour
         {
             isGround = false;
         }
+
+        if(collision.gameObject.tag == "Gelo")
+        {
+            if(facingDirection == -1)
+                rb.velocity = new Vector2(transform.position.x*-1, transform.position.y);
+            if(facingDirection == 1)
+                rb.velocity = new Vector2(transform.position.x, transform.position.y);
+        }
+        
     }
 
     private void Attack()
