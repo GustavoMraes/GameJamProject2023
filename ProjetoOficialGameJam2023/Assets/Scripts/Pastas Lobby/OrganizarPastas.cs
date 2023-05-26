@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OrganizarPastas : MonoBehaviour
 {
@@ -65,14 +66,14 @@ public class OrganizarPastas : MonoBehaviour
             Fase1Check();
             Fase2Check();
             Fase3Check();
+            StartCoroutine(LobbyCorrompido());
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator LobbyCorrompido()
     {
-        
-        
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("Lobby Corrompido");
     }
 
     public void Fase1Check ()

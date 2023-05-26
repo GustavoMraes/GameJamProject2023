@@ -70,4 +70,9 @@ public class InteractObject : MonoBehaviour
         }
 
     }
+
+    public void combateTurno()
+    {
+        SceneManager.LoadScene("CombateDeTurno");
+    }
 }

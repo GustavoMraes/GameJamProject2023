@@ -1685,6 +1685,10 @@ PrefabInstance:
       propertyPath: playerInteract
       value: 
       objectReference: {fileID: 1232785475}
+    - target: {fileID: 1064078552569688122, guid: b6f48ac841a986f4283bca62ddfcfa6e, type: 3}
+      propertyPath: botaoApertado.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextScene
+      objectReference: {fileID: 0}
     - target: {fileID: 1064078552569688123, guid: b6f48ac841a986f4283bca62ddfcfa6e, type: 3}
       propertyPath: m_Name
       value: FimDaFase
@@ -7780,7 +7784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232785468}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.25, y: 0.49, z: 0}
+  m_LocalPosition: {x: -6.35, y: 0.62, z: 0}
   m_LocalScale: {x: 0.60605, y: 0.60605, z: 0.60605}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -28,10 +28,6 @@ public class Voltar : MonoBehaviour
         cena1 = "Lobby";
     }
 
-    
-
-    
-
     // Update is called once per frame
     void Update()
     {
@@ -60,6 +56,5 @@ public class Voltar : MonoBehaviour
     {
         player.SubirNivel();
         SceneManager.LoadScene(cena1);
-
     }
 }
