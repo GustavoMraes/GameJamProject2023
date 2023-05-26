@@ -16,7 +16,7 @@ public class BossHealth : MonoBehaviour
 
 	public string lobby;
 
-	public void TakeDamage(int damage)
+    public void TakeDamage(int damage)
 	{
 		if (isInvulnerable)
 			return;
@@ -38,7 +38,7 @@ public class BossHealth : MonoBehaviour
 	{
 		animator.SetBool("isDead", true);
 
-		yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(lobby);
     }
     public int quantodevida()

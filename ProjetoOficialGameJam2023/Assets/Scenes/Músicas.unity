@@ -21924,10 +21924,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7df1fb090b09094b90d5d36b1bd33b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 2
   deathEffect: {fileID: 0}
   animator: {fileID: 1325538332}
   isInvulnerable: 0
+  lobby: Lobby
 --- !u!4 &1409024685 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5801313936092492628, guid: f19ea1f96faef4acaadd6f96188fc1e0, type: 3}
