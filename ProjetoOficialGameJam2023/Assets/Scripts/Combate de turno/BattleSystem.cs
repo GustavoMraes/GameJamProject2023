@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
@@ -126,8 +127,17 @@ public class BattleSystem : MonoBehaviour
         else if (state == BattleState.LOST)
         {
             dialogueText.text = "Você foi derrotado";
+            StartCoroutine(Lost());
         }
 
+    }
+
+    IEnumerator Lost()
+    {
+        yield return new WaitForSeconds(2f);
+        dialogueText.text = "Tente Novamente";
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Lobby Corrompido");
     }
 
     void PlayerTurn()
