@@ -50,7 +50,7 @@ public class BackgroundScroll : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        Vector3 newPosition = playerLocal.position + new Vector3(0, 0, -5);   
+        Vector3 newPosition = playerLocal.position + new Vector3(0, 0, -10);   
         
         newPosition = Vector3.Lerp(transform.position, newPosition, timeLerp);
 

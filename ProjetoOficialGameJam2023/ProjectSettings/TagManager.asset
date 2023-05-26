@@ -12,6 +12,7 @@ TagManager:
   - Fase4
   - Boss
   - Gelo
+  - Frames
   layers:
   - Default
   - TransparentFX

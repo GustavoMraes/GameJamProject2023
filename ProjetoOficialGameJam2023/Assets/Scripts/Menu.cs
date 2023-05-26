@@ -73,9 +73,9 @@ public class Menu : MonoBehaviour
     public void QuitGame()
     {
         // Editor Unity (Lembrar de botar como comentario quando compilar o jogo)
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
 
         // Editor Unity (Lembrar de tirar de comentario quando compilar o jogo)
-        //Application.Quit();
+        Application.Quit();
     }
 }
