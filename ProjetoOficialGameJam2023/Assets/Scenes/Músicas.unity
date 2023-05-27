@@ -25564,15 +25564,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 146214422064542086, guid: d6f2591f2fc910847b391f6799b9630f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3656
+      value: -3675
       objectReference: {fileID: 0}
     - target: {fileID: 146214422064542086, guid: d6f2591f2fc910847b391f6799b9630f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -218
+      value: -206
       objectReference: {fileID: 0}
     - target: {fileID: 146214422064542086, guid: d6f2591f2fc910847b391f6799b9630f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 177
+      value: 174
       objectReference: {fileID: 0}
     - target: {fileID: 146214422122835784, guid: d6f2591f2fc910847b391f6799b9630f, type: 3}
       propertyPath: m_UiScaleMode
@@ -25670,6 +25670,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1630126814}
+    - target: {fileID: 146214422122835791, guid: d6f2591f2fc910847b391f6799b9630f, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 146214422824832443, guid: d6f2591f2fc910847b391f6799b9630f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

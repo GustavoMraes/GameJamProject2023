@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CombateDeTurno.unity
     guid: 1b803d2400b00124282016e6bcbd0d7c
+  - enabled: 1
+    path: Assets/Scenes/Fim.unity
+    guid: 7a865f5868087b441857af24d1f9cf8f
   - enabled: 0
     path: Assets/Scenes/Cena de teste.unity
     guid: bed386886adb3914bbe38ccaef500f36

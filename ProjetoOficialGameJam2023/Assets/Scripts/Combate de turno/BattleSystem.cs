@@ -123,11 +123,15 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             dialogueText.text = "Você ganhou a batalha";
+            SceneManager.LoadScene("Fim");
+
+
         }
         else if (state == BattleState.LOST)
         {
             dialogueText.text = "Você foi derrotado";
             StartCoroutine(Lost());
+
         }
 
     }
