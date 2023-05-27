@@ -410,7 +410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1429a5502a325b947a43553696e61bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identificador: 0
+  identificador: 1
+  player: {fileID: 1978757146}
 --- !u!114 &107575336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2367,7 +2368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1429a5502a325b947a43553696e61bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identificador: 123123123
+  identificador: 0
+  player: {fileID: 1978757146}
 --- !u!114 &1674372421 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4132366999220643568, guid: f4572aa25e6616c4daeda89121f768de, type: 3}
@@ -2838,6 +2840,7 @@ MonoBehaviour:
     m_Bits: 256
   isMoving: 0
   isGround: 0
+  canMove: 1
   gameOverPanel: {fileID: 0}
   cookies: 0
   quantidadeText: {fileID: 0}
@@ -3013,7 +3016,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1429a5502a325b947a43553696e61bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identificador: 0
+  identificador: 2
+  player: {fileID: 1978757146}
 --- !u!114 &2053234104
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,26 +5,39 @@ using UnityEngine;
 public class PastaLivre : MonoBehaviour
 {
     public int identificador;
-   
+    public playerController player;
+    private int nivel;
+
     // Start is called before the first frame update
     void Start()
     {
-        if (identificador != 0)
+
+        nivel = player.VerNivel();
+        gameObject.SetActive(false);
+
+        if (identificador == 0 && nivel == 0)
         {
             gameObject.SetActive(true);
         }
-        else
+        if (identificador == 1 && nivel == 1)
         {
-            gameObject.SetActive(false);
+            gameObject.SetActive(true);
         }
-            
-    }
+        if (identificador == 2 && nivel == 2)
+        {
+            gameObject.SetActive(true);
+        }
+        if (identificador == 3 && nivel == 3)
+        {
+            gameObject.SetActive(true);
+        }
+
+
+    }   
+
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     public void liberar()
     {
@@ -35,10 +48,7 @@ public class PastaLivre : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void liberarPasta3() 
-    {
-        identificador = 1;
-    }
+   
 
     
 

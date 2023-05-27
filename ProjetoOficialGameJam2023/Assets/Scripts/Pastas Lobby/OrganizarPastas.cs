@@ -90,7 +90,7 @@ public class OrganizarPastas : MonoBehaviour
     {
         pasta2check.checkPasta();
         pasta2livre.finalizada();
-        pasta3livre.liberarPasta3();
+        pasta3livre.liberar();
         pasta3disblock.liberar();
         primeiro.desligarBarra();
         segundo.ligarBarra();
